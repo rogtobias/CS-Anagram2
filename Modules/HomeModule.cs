@@ -10,7 +10,7 @@ using System.Collections.Generic;
       {
         Get["/"] = _ => View["index.cshtml"];
 
-        Post["/"] = _ => {
+        Post["/confirmation"] = _ => {
           string output = Anagram.CheckAnagram(Request.Form["user-word"], Request.Form["user-list"]);
           return View["index.cshtml", output];
         };
